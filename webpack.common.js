@@ -2,10 +2,10 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const WebpackAssetsManifest = require('webpack-assets-manifest');
 const { ModuleFederationPlugin } = require('webpack').container;
 const DynamicContainerPathPlugin = require('dynamic-container-path-webpack-plugin');
 const setPublicPath = require('dynamic-container-path-webpack-plugin/set-path');
-const WebpackAssetsManifest = require('webpack-assets-manifest');
 
 const chunks = require('./config/chunks.config.json');
 const mainEntry = chunks.entrypoints[0];
@@ -28,14 +28,14 @@ const commonConfig = isProduction => {
       runtimeChunk: false,
     },
     plugins: [
-      new CopyPlugin({
-        patterns: [{ from: 'config', to: '' }],
-      }),
-      new WebpackAssetsManifest({}),
       new webpack.ProvidePlugin({
         $: 'jquery',
         jQuery: 'jquery',
       }),
+      new CopyPlugin({
+        patterns: [{ from: 'config', to: '' }],
+      }),
+      new WebpackAssetsManifest({}),
       new HtmlWebpackPlugin({
         filename: 'index.html',
         title: 'Remote',
