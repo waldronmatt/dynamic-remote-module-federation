@@ -1,0 +1,4 @@
+{
+  "entrypoints": ["RemoteFormApp", "remoteEntry"],
+  "remotes": []
+}
