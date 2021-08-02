@@ -11,6 +11,18 @@ const chunks = require('./config/chunks.config.json');
 const mainEntry = chunks.entrypoints[0];
 
 const commonConfig = isProduction => {
+
+  // project-specific configurations are located here
+  const ModuleFederationConfiguration = () => {
+    return new ModuleFederationPlugin({
+      name: 'FormApp',
+      filename: 'remoteEntry.js',
+      exposes: {
+        './initContactForm': './src/form/init-contact-form',
+      },
+    });
+  };
+
   return {
     target: 'web',
     entry: {
@@ -38,14 +50,14 @@ const commonConfig = isProduction => {
       new WebpackAssetsManifest({}),
       new HtmlWebpackPlugin({
         filename: 'index.html',
-        title: 'Remote',
-        description: 'Remote App of Module Federation',
+        title: `${mainEntry}`,
+        description: `${mainEntry} of Module Federation`,
         template: 'src/index.html',
         /* 
-          here we strip out the entry point and the remote alias 'FormApp'
+          here we strip out the entry point
           because we don't want it duplicated when we call it again dynamically at runtime
         */
-        excludeChunks: [...chunks.entrypoints, 'FormApp'],
+        excludeChunks: [...chunks.entrypoints],
       }),
       new ModuleFederationPlugin({
         name: 'FormApp',
@@ -63,7 +75,7 @@ const commonConfig = isProduction => {
         */
         entry: mainEntry,
       }),
-    ],
+    ].concat(ModuleFederationConfiguration),
   };
 };
 
