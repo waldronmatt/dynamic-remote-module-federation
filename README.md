@@ -2,7 +2,7 @@
 
 # Dynamic Module Federation (Remote App)
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/3e048e51-7a25-4fae-8c34-62913d3f85a6/deploy-status)](https://app.netlify.com/sites/waldronmatthew/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3e048e51-7a25-4fae-8c34-62913d3f85a6/deploy-status)](https://app.netlify.com/sites/dynamic-remote-module-federation/deploys)
 
 An environment-agnostic, federated app that is partially exposed for dynamic consumption by the host app. [Click here to see it live on Netlify](https://dynamic-remote-module-federation.netlify.app/).
 
