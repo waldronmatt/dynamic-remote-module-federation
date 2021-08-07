@@ -2,6 +2,8 @@
 
 # Dynamic Module Federation (Remote App)
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3e048e51-7a25-4fae-8c34-62913d3f85a6/deploy-status)](https://app.netlify.com/sites/waldronmatthew/deploys)
+
 An environment-agnostic, federated app that is partially exposed for dynamic consumption by the host app.
 
 ## Introduction
@@ -23,6 +25,10 @@ Run dev environment:
 Navigate to the local server:
 
 **[http://localhost:8001](http://localhost:8001)**
+
+## Getting Started
+
+See the [readme file](https://github.com/waldronmatt/dynamic-host-module-federation#guide---an-approach-to-module-federation-for-enterprise) for more information.
 
 ## Notes
 

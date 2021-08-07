@@ -11,7 +11,6 @@ const chunks = require('./config/chunks.config.json');
 const mainEntry = chunks.entrypoints[0];
 
 const commonConfig = isProduction => {
-
   // project-specific configurations are located here
   const ModuleFederationConfiguration = () => {
     return new ModuleFederationPlugin({

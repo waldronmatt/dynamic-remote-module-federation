@@ -10,4 +10,4 @@
   https://webpack.js.org/concepts/module-federation/#troubleshooting
 */
 
-import("./app");
+import('./app');
