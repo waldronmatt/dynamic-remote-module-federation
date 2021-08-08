@@ -14,7 +14,7 @@ const developmentConfig = {
     },
     index: 'index.html',
     port: 8001,
-    //writeToDisk: true,
+    // writeToDisk: true,
   },
   plugins: [new webpack.HotModuleReplacementPlugin()],
 };
