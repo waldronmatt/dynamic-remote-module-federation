@@ -28,7 +28,7 @@ Navigate to the local server:
 
 ## Getting Started
 
-See the [readme file](https://github.com/waldronmatt/dynamic-host-module-federation#guide---an-approach-to-module-federation-for-enterprise) for more information.
+See [Tutorial - A Guide to Module Federation for Enterprise](https://dev.to/waldronmatt/tutorial-a-guide-to-module-federation-for-enterprise-n5) for more information and to learn how this repository works.
 
 ## Notes
 
