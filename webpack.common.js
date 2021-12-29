@@ -30,9 +30,10 @@ const commonConfig = isProduction => {
     output: {
       publicPath: '/',
       path: path.resolve(__dirname, './dist'),
+      clean: true,
     },
     optimization: {
-      /* 
+      /*
         disable webpack base config `runtimeChunck: single`
         https://github.com/webpack/webpack/issues/11691
       */
@@ -52,7 +53,7 @@ const commonConfig = isProduction => {
         title: `${mainEntry}`,
         description: `${mainEntry} of Module Federation`,
         template: 'src/index.html',
-        /* 
+        /*
           here we strip out the entry point
           because we don't want it duplicated when we call it again dynamically at runtime
         */
@@ -69,7 +70,7 @@ const commonConfig = isProduction => {
         // provide the code to get `publicPath` at runtime
         iife: setPublicPath,
         /*
-          Provide the main entry point as an argument to the plugin above. The value will be 
+          Provide the main entry point as an argument to the plugin above. The value will be
           provided as a key to `map.config.json` to get the URL for this app
         */
         entry: mainEntry,
