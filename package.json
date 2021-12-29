@@ -31,6 +31,7 @@
     "webpack-node-externals": "^2.5.2"
   },
   "dependencies": {
+    "compression": "^1.7.4",
     "express": "^4.17.1",
     "jquery": "^3.6.0",
     "jquery-mask-plugin": "^1.14.16",
