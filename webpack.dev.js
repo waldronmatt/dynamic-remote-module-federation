@@ -2,6 +2,7 @@ const commonConfig = require('./webpack.common.js');
 const extendWebpackBaseConfig = require('@waldronmatt/webpack-config');
 const path = require('path');
 const webpack = require('webpack');
+const { MFLiveReloadPlugin } = require('@module-federation/fmr');
 
 const developmentConfig = {
   devServer: {
@@ -16,7 +17,15 @@ const developmentConfig = {
     port: 8001,
     // writeToDisk: true,
   },
-  plugins: [new webpack.HotModuleReplacementPlugin()],
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    // configure the plugin
+    new MFLiveReloadPlugin({
+      port: 8001, // the port your app runs on
+      container: 'FormApp', // the name of your app, must be unique
+      standalone: true, // false uses chrome extention
+    }),
+  ],
 };
 
 module.exports = extendWebpackBaseConfig(commonConfig, developmentConfig);
