@@ -15,6 +15,7 @@ const developmentConfig = {
     },
     index: 'index.html',
     port: 8001,
+    open: true,
     // writeToDisk: true,
   },
   plugins: [
